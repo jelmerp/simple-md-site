@@ -1,0 +1,35 @@
+name: "my-website"
+output_dir: docs
+navbar:
+  title: "My Website"
+  left:
+    - text: "Home"
+      icon: fa-home
+      href: index.html
+    - text: "About"
+      icon: fa-info
+      href: about.html
+    - text: "Covid"
+      icon: fa-syringe
+      href: practice.html
+    - text: "More"
+      icon: fa-gear
+      menu:
+        - text: "Heading 1"
+        - text: "Page A"
+          href: practice.html
+        - text: "Page B"
+          href: practice.html
+        - text: "---------"
+        - text: "Heading 2"
+        - text: "Page C"
+          href: practice.html
+  right:
+    - icon: fa-github fa-lg
+      href: https://example.com
+output:
+  html_document:
+    theme: flatly
+    include:
+      after_body: my_footer.html
+
