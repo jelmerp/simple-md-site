@@ -1,4 +1,15 @@
 ---
-title: "Test site"
+title: "Just for testing"
 ---
 
+```{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy()
+```
+
+Footnotes use standard Pandoc markdown notation, for example ^[This will become a hover-able footnote].
+
+****
+
+After the page break, more text!
+
+****

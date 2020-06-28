@@ -1,7 +1,8 @@
 name: "my-website"
 output_dir: docs
+highlight: tango
 navbar:
-  title: "My Website"
+  title: "A course site"
   left:
     - text: "Home"
       icon: fa-home
@@ -9,7 +10,7 @@ navbar:
     - text: "About"
       icon: fa-info
       href: about.html
-    - text: "Covid"
+    - text: "Test"
       icon: fa-syringe
       href: practice.html
     - text: "More"
@@ -29,7 +30,8 @@ navbar:
       href: https://example.com
 output:
   html_document:
+    css: style.css
     theme: flatly
     include:
       after_body: my_footer.html
-
+      in_header: [header.html, hero-image.html]
