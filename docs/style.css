@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400&display=swap');
+
+/*------------- Whole Document---------------- */
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+}
+
+/*----------------WHITE SPACE AND HEADER FORMATTING-------------*/
+.title {
+  margin-top: 2em !important;
+  margin-bottom: 1em;
+}
+
+/* Remove excessive white space at the end of page */
+.tocify-extend-page {
+  height: 100px !important;
+}
+
+h1, h2, h3, .h1, .h2, .h3 {
+  font-family: "Playfair Display";
+  letter-spacing: 2px;
+  line-height: 4rem; /* increases, so wrapping headers don't overlap */
+  margin-bottom: 0.3em; /* CANT GET margin-top TO WORK - COLLAPSES INSTEAD */
+  color:#0a6bcc;
+}
+
+
+/*---------------------------- NAVBAR ----------------------------------- */
+.navbar {
+  padding: 15px 15px;
+  font-size: 20px;
+  font-family: "Playfair Display";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  /* background-image for fade-to-white color of navbar */
+  /*background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255,255,255,0.5)); */
+  background-color: #686e78;
+}
+/*
+.navbar:hover {
+  background-color: #8a93a1;
+}
+.navbar:active {
+  background-color: #8a93a1;
+}
+*/
+
+/*------------ Caption font ----------- */
+.caption {
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: Monospace;
+  margin: 1px 100px 25px 100px;
+}
+
+/*------------ TAB BUTTON STYLING (NOT WORKING?) ----------- */
+.btn {
+    border-width: 0 0px 0px 0px;
+    font-weight: normal;
+}
+.btn-default {
+    color: #2ecc71;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+/*------------Table of Contents (TOC)----------- */
+/* Makes TOC sticky (needed if you used a hero image) */
+.row-fluid{
+  display: flex; /* Necessary for sticky TOC*/
+}
+
+.tocify {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 120px; /*Controls where TOC stops when sticky */
+  width: 100% !important;
+  border: none;   /*Removes border */
+  border-radius: 0px; /* Gets rid of rounded corners on TOC */
+  font-size: 16px;
+}
+
+.tocify ul, .tocify li { /* Increases spacing between TOC headers*/
+    line-height: 25px !important;
+}
+
+.tocify ul {
+  border-right: solid 1px #eee; /* Thin right border on TOC list */
+}
+
+/* Space Between TOC and righthand side content on large screens */
+@media (min-width: 992px) {
+    .col-md-9 {
+      width: 75%;
+      padding-left: 5em !important;
+    }
+}
+
+.exercise {
+    padding-left: 2em;
+    border: 1px solid;
+    border-color: #ffffff;
+    /* color: #ffffff; white*/
+    color: #696969; /* dark grey*/
+    /* background-color: #26a69a; dark teal*/
+    background-color: #96D3CE; medium teal
+    /* background-color: #D3EDEA; */
+
+}
+
+/*----------LOGO above TOC---------*/
+#TOC::before {
+  content: "";
+  display: block;
+  height: 100px;
+  margin: 2.75em 10px 10px 10px;
+  background-image: url("img/Logo.jpg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/*---------- LOGO IN TOPRIGHT ---------*/
+#header.fluid-row::before {
+   content: "";
+   height: 150px;
+   width: 150px;
+   float: right;
+   background-image: url("img/Logo.jpg");
+   background-size: contain;
+   background-position: center center;
+   background-repeat: no-repeat;
+ }
+
+
+/* -----------HERO IMAGE AT TOP OF PAGE -----------*/
+/* LARGE HERO IMAGE AT TOP OF PAGE*/
+.hero-image {
+    position: relative;
+    margin-bottom: 2em;
+    /* liner gradient tints the image darker for readability*/
+    background-image: linear-gradient( rgba(0,0,0,.2), rgba(0,0,0,.2) ), url(img/unsplash.jpg);
+    height: 400px;
+    background-size: cover;
+    background-color: #141c25f2;
+    background-position: center center;
+    display: flex; /* Change to `display: none` for no hero image */
+    justify-content: center;
+    align-items: center;
+}
+
+.top-text {
+  position: relative;
+  font-size: 34px;
+  padding-bottom: 0.5em;
+  text-transform: uppercase;
+  text-align: center;
+  display: block; /* Change to `display: none` for no top text */
+  color: #ffffff72;
+}
+
+.bottom-text {
+  position: relative;
+  letter-spacing: 0.065em;
+  line-height: 1em;
+  font-size: 68px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block; /* Change to `display: none` for no bottom text */
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+}
+
+
+/* -----------Question counter ---------*/
+body {
+  counter-reset: li;
+}
+
+.question ol {
+  /* Remove the default left padding */
+  padding-left: 0;
+}
+
+.question ol>li {
+  /* Create a positioning context */
+  position: relative;
+  /* Disable the normal item numbering */
+  list-style: none;
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 0;
+  padding-left: 120px;
+  border: 2px solid green;
+  border-radius: 10px; /* Rounded border */
+}
+
+.question ol>li:before,
+.question ol>p>li:before{
+  /* Use the counter as content */
+  content: "Question " counter(li) ": ";
+  /* Increment the counter by 1 */
+  counter-increment: li;
+  position: absolute;
+  color: #3d85bb;
+  left: -0.5px;
+  font-weight: bold;
+}
+
+.question ol ol {
+  counter-reset: subitem;
+}
+
+
+/*------------FOOTER----------*/
+/* Divider line above footer */
+.footer hr{
+  width: 100%;
+  border: none;
+  background-color: #808080;
+  height: 2px;
+}
+
+.footer {
+  font-size: 16px;
+  color: #808080;
+  text-align: center;
+  width: 90%;
+  margin: 3rem auto;
+  font-weight: 300;
+}
+
+.footer.logo {
+  width: 25px;
+  margin: 0px !important;
+}
+
+.rstudio4edu-footer {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.tocify-extend-page {
+  height: 0px !important; /* Gets rid of extra space after footer*/
+}
+
+
+/* ------------Change hyperlink color, incl. when hovering----------------- */
+a {
+  color: #5ebccf;
+}
+
+a:hover {
+ color: #50a0b0; /* darker color when hovering */
+}
+
+
+/* -----------Section anchors NOT WORKING -------------*/
+.body {
+  overflow: visible !important; /*so anchor link doesnt get cut off */
+}
+
+a.anchor {
+  margin-left: -30px;
+  padding-right: 3px;
+  display:inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url(https://image.flaticon.com/icons/svg/34/34735.svg) !important;
+  background-repeat: no-repeat !important;
+  background-size: 20px 20px !important;
+  background-position: center bottom !important;
+  opacity: 0;
+}
+
+.hasAnchor:hover a.anchor, a.anchor:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 1144px) { /* dont show anchor link on small screens */
+  .hasAnchor:hover a.anchor {
+    visibility: hidden;
+  }
+}

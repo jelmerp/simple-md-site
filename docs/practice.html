@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>A page to test styling and appearance</title>
+
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="site_libs/clipboard-1.7.1/clipboard.min.js"></script>
+<link href="site_libs/primer-tooltips-1.4.0/build.css" rel="stylesheet" />
+<link href="site_libs/klippy-0.0.0.9500/css/klippy.min.css" rel="stylesheet" />
+<script src="site_libs/klippy-0.0.0.9500/js/klippy.min.js"></script>
+<link href="site_libs/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.15/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link rel="icon" type="image/ico" href="img/favicon.ico"/>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+#rmd-source-code {
+  display: none;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img id="logo" style="width: 80px;" src="img/Logo.jpg" /></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="about.html">
+    <span class="fa fa-info"></span>
+     
+    About
+  </a>
+</li>
+<li>
+  <a href="practice.html">
+    <span class="fa fa-syringe"></span>
+     
+    Test
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    More
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Main pages</li>
+    <li>
+      <a href="headertest.html">Testing headers!</a>
+    </li>
+    <li>
+      <a href="headertest.html">Page B</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Additional pages</li>
+    <li>
+      <a href="headertest.html">Page C</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/jelmerp/simple-md-site">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+<li role="separator" class="divider"></li>
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">A page to test styling and appearance</h1>
+
+</div>
+
+
+<script>
+  addClassKlippyTo("pre.r, pre.markdown");
+  addKlippy('right', 'top', 'auto', '1', 'Copy code to clipboard', 'Copied!');
+</script>
+<p><br></p>
+<div id="section-icon" class="section level2 unnumbered" number="">
+<h2>Icons</h2>
+<hr />
+<p>Here <i class="fas  fa-rocket "></i> is a rocket.</p>
+<p><i class="fas  fa-rocket " style="color:#1FA67A;"></i> + <i class="fab  fa-r-project " style="color:#384CB7;"></i> = <i class="fas  fa-heart " style="color:red;"></i></p>
+<p><a href="my.pdf"> <i class="fa fa-file-pdf fa-4x"></i></a></p>
+<p>Footnotes use standard <a href="https://pandoc.org/">Pandoc</a> markdown notation, for example <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p><br></p>
+<div class="question">
+<ol style="list-style-type: decimal">
+<li>My first question</li>
+</ol>
+</div>
+<p><br>
+<br></p>
+</div>
+<div id="the-exercise-directive" class="section level2 exercise unnumbered" number="">
+<h2>The “exercise” directive</h2>
+<hr />
+<p>This is an <code>excercise</code> section, which is defined in the CSS file.</p>
+<p>I will also link to the <a href="#section-icon">Icon section</a>.
+And refer to Fig. <a href="#fig:gg-oz-gapminder">1</a>.</p>
+<p><br>
+<br></p>
+</div>
+<div id="more-background-coloring" class="section level2 unnumbered" number="">
+<h2>More background coloring</h2>
+<hr />
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class="blue">
+<ul>
+<li>This is my first conclusion</li>
+<li>This is my second conclusion</li>
+</ul>
+</div>
+<p><br>
+<br></p>
+</div>
+<div id="some-code" class="section level2 unnumbered" number="">
+<h2>Some code</h2>
+<hr />
+<pre class="r"><code>install.packages(c(&#39;here&#39;, &#39;tidyverse&#39;))
+library(here) # When working with local files</code></pre>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<p><br>
+<br></p>
+</div>
+<div id="a-plot" class="section level2 unnumbered" number="">
+<h2>A plot</h2>
+<hr />
+<div class="figure"><span id="fig:gg-oz-gapminder"></span>
+<img src="practice_files/figure-html/gg-oz-gapminder-1.png" alt="Life expectancy from 1952 - 2007 for Australia." width="672" />
+<p class="caption">
+Figure 1: Life expectancy from 1952 - 2007 for Australia.
+</p>
+</div>
+<p><br>
+<br></p>
+</div>
+<div id="a-map" class="section level2 unnumbered" number="">
+<h2>A map</h2>
+<hr />
+<div id="htmlwidget-c3777e7cf8b7e3154214" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c3777e7cf8b7e3154214">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[40.77995,-81.92633,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Selby Hall",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[40.77995,40.77995],"lng":[-81.92633,-81.92633]}},"evals":[],"jsHooks":[]}</script>
+<p><br></p>
+</div>
+<div id="multiple-columns" class="section level2 unnumbered" number="">
+<h2>Multiple columns</h2>
+<hr />
+<div class="row">
+<div class="col-md-4">
+<p><br><br>Since R Markdown use the <a href="https://getbootstrap.com/docs/4.0/layout/grid/">bootstrap framework</a> under the hood. It is possible to benefit its powerful grid system. Basically, you can consider that your row is divided in 12 subunits of same width. You can then choose to use only a few of this subunits.</p>
+</div>
+<div class="col-md-4">
+<p><br><br>Here, I use 3 subunits of size 4 (4x3=12). The last column is used for a plot. You can read more about the grid system <a href="bootstrap%20grid%20system">here</a>. I got this result showing the following code in my R Markdown document.</p>
+</div>
+<div class="col-md-4">
+<p><img src="practice_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+</div>
+<p><br>
+<br></p>
+</div>
+<div id="a-table-with-kable" class="section level2 unnumbered" number="">
+<h2>A table with kable</h2>
+<hr />
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 1: </span>The first 6 rows of the dataset, gapminder</caption>
+<thead>
+<tr class="header">
+<th align="left">country</th>
+<th align="left">continent</th>
+<th align="right">year</th>
+<th align="right">lifeExp</th>
+<th align="right">pop</th>
+<th align="right">gdpPercap</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Afghanistan</td>
+<td align="left">Asia</td>
+<td align="right">1952</td>
+<td align="right">28.80</td>
+<td align="right">8425333</td>
+<td align="right">779.45</td>
+</tr>
+<tr class="even">
+<td align="left">Afghanistan</td>
+<td align="left">Asia</td>
+<td align="right">1957</td>
+<td align="right">30.33</td>
+<td align="right">9240934</td>
+<td align="right">820.85</td>
+</tr>
+<tr class="odd">
+<td align="left">Afghanistan</td>
+<td align="left">Asia</td>
+<td align="right">1962</td>
+<td align="right">32.00</td>
+<td align="right">10267083</td>
+<td align="right">853.10</td>
+</tr>
+<tr class="even">
+<td align="left">Afghanistan</td>
+<td align="left">Asia</td>
+<td align="right">1967</td>
+<td align="right">34.02</td>
+<td align="right">11537966</td>
+<td align="right">836.20</td>
+</tr>
+<tr class="odd">
+<td align="left">Afghanistan</td>
+<td align="left">Asia</td>
+<td align="right">1972</td>
+<td align="right">36.09</td>
+<td align="right">13079460</td>
+<td align="right">739.98</td>
+</tr>
+<tr class="even">
+<td align="left">Afghanistan</td>
+<td align="left">Asia</td>
+<td align="right">1977</td>
+<td align="right">38.44</td>
+<td align="right">14880372</td>
+<td align="right">786.11</td>
+</tr>
+</tbody>
+</table>
+<div class="question">
+<ol style="list-style-type: decimal">
+<li>Wait, another question?</li>
+</ol>
+</div>
+<p><br>
+<br></p>
+</div>
+<div id="a-table-with-dt" class="section level2 unnumbered" number="">
+<h2>A table with DT</h2>
+<hr />
+<div id="htmlwidget-7fdf3d34664deed846ab" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7fdf3d34664deed846ab">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"10.4\" data-max=\"33.9\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"4\" data-max=\"8\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"71.1\" data-max=\"472\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"52\" data-max=\"335\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"2.76\" data-max=\"4.93\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1.513\" data-max=\"5.424\" data-scale=\"3\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"14.5\" data-max=\"22.9\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0\" data-max=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0\" data-max=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"3\" data-max=\"5\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1\" data-max=\"8\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],[6,6,4,6,8,6,8,4,4,6,6,8,8,8,8,8,8,4,4,4,4,8,8,8,8,4,4,4,8,6,8,4],[160,160,108,258,360,225,360,146.7,140.8,167.6,167.6,275.8,275.8,275.8,472,460,440,78.7,75.7,71.1,120.1,318,304,350,400,79,120.3,95.1,351,145,301,121],[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109],[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92,3.92,3.07,3.07,3.07,2.93,3,3.23,4.08,4.93,4.22,3.7,2.76,3.15,3.73,3.08,4.08,4.43,3.77,4.22,3.62,3.54,4.11],[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44,3.44,4.07,3.73,3.78,5.25,5.424,5.345,2.2,1.615,1.835,2.465,3.52,3.435,3.84,3.845,1.935,2.14,1.513,3.17,2.77,3.57,2.78],[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3,18.9,17.4,17.6,18,17.98,17.82,17.42,19.47,18.52,19.9,20.01,16.87,17.3,15.41,17.05,18.9,16.7,16.9,14.5,15.5,14.6,18.6],[0,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1],[1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],[4,4,4,3,3,3,3,4,4,4,4,3,3,3,3,3,3,4,4,4,3,3,3,3,3,4,5,5,5,5,5,4],[4,4,1,1,2,1,4,2,2,4,4,3,3,3,4,4,4,1,2,1,1,2,2,4,2,1,2,2,4,6,8,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[0,1,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<p><br>
+<br></p>
+</div>
+<div id="a-tabbed-section" class="section level2 unnumbered tabset tabset-fade tabset-pills" number="">
+<h2>A tabbed section</h2>
+<hr />
+<div id="first" class="section level3 unnumbered" number="">
+<h3>First</h3>
+<p>A first section</p>
+<p><br>
+<br></p>
+</div>
+<div id="second" class="section level3 unnumbered" number="">
+<h3>Second</h3>
+<p>content of sub-chapter #2</p>
+<p><br>
+<br></p>
+</div>
+<div id="third" class="section level3 unnumbered" number="">
+<h3>Third</h3>
+<p>content of sub-chapter #3</p>
+<p><br>
+<br></p>
+</div>
+</div>
+<div id="session-info" class="section level2 unnumbered" number="">
+<h2>Session info</h2>
+<hr />
+<pre><code>## R version 4.0.3 (2020-10-10)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 20.04.1 LTS
+## 
+## Matrix products: default
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8    LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] leaflet_2.0.3   DT_0.15         dplyr_1.0.2     ggplot2_3.3.2   gapminder_0.3.0
+## 
+## loaded via a namespace (and not attached):
+##  [1] httr_1.4.2          pkgload_1.1.0       tidyr_1.1.2         jsonlite_1.7.1      viridisLite_0.3.0  
+##  [6] gtools_3.8.2        assertthat_0.2.1    memuse_4.1-0        highr_0.8           BiocManager_1.30.10
+## [11] renv_0.12.2         yaml_2.2.1          remotes_2.2.0       sessioninfo_1.1.1   pillar_1.4.7       
+## [16] backports_1.2.0     glue_1.4.2          digest_0.6.27       snakecase_0.11.0    colorspace_1.4-1   
+## [21] cowplot_1.1.0       htmltools_0.5.0     clisymbols_1.2.0    pkgconfig_2.0.3     devtools_2.3.2     
+## [26] broom_0.7.2         bookdown_0.20       purrr_0.3.4         scales_1.1.1        processx_3.4.4     
+## [31] gdata_2.18.0        broman_0.70-4       tibble_3.0.4        farver_2.0.3        generics_0.1.0     
+## [36] usethis_1.6.3       ellipsis_0.3.1      withr_2.3.0         janitor_2.0.1       repr_1.1.0         
+## [41] skimr_2.1.2         klippy_0.0.0.9500   lazyeval_0.2.2      cli_2.2.0           magrittr_2.0.1     
+## [46] crayon_1.3.4        memoise_1.1.0       evaluate_0.14       ps_1.4.0            fs_1.5.0           
+## [51] fansi_0.4.1         pkgbuild_1.1.0      tools_4.0.3         data.table_1.13.0   prettyunits_1.1.1  
+## [56] lifecycle_0.2.0     stringr_1.4.0       plotly_4.9.2.1      munsell_0.5.0       callr_3.5.1        
+## [61] compiler_4.0.3      rlang_0.4.9         grid_4.0.3          rstudioapi_0.13     htmlwidgets_1.5.1  
+## [66] crosstalk_1.1.0.1   icon_0.1.0          prompt_1.0.0        labeling_0.4.2      base64enc_0.1-3    
+## [71] rmarkdown_2.5       testthat_3.0.0      gtable_0.3.0        R6_2.5.0            lubridate_1.7.9.2  
+## [76] knitr_1.30          rprojroot_2.0.2     desc_1.2.0          stringi_1.5.3       Rcpp_1.0.5         
+## [81] vctrs_0.3.5         tidyselect_1.1.0    xfun_0.19</code></pre>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This will become a hover-able footnote<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQSBwYWdlIHRvIHRlc3Qgc3R5bGluZyBhbmQgYXBwZWFyYW5jZSIKb3V0cHV0OgogIGJvb2tkb3duOjpodG1sX2RvY3VtZW50MjoKICAgIHRvYzogdHJ1ZQogICAgdG9jX2Zsb2F0OiB0cnVlCi0tLQoKYGBge3Igc2V0dXAsIGluY2x1ZGU9RkFMU0V9CmtuaXRyOjpvcHRzX2NodW5rJHNldChlY2hvID0gVFJVRSkKYGBgCgpgYGB7ciBwYWNrYWdlcywgaW5jbHVkZT1GQUxTRX0KbGlicmFyeShnYXBtaW5kZXIpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShkcGx5cikKbGlicmFyeShEVCkKYGBgCgpgYGB7ciBrbGlwcHksIGVjaG89RkFMU0UsIGluY2x1ZGU9VFJVRX0Ka2xpcHB5OjprbGlwcHkocG9zaXRpb24gPSAncmlnaHQnLAogICAgICAgICAgICAgICB0b29sdGlwX21lc3NhZ2UgPSAiQ29weSBjb2RlIHRvIGNsaXBib2FyZCIsCiAgICAgICAgICAgICAgIHRvb2x0aXBfc3VjY2VzcyA9ICJDb3BpZWQhIikKYGBgCgo8YnI+CgojIyBJY29ucyB7LSAjc2VjdGlvbi1pY29ufQoqKioKSGVyZSBgciBpY29uOjpmYSgicm9ja2V0IilgIGlzIGEgcm9ja2V0LgoKYHIgaWNvbjo6ZmFfcm9ja2V0KGNvbG91ciA9ICIjMUZBNjdBIilgICsgYHIgaWNvbjo6ZmFfcl9wcm9qZWN0KGNvbG91ciA9ICIjMzg0Q0I3IilgID0gYHIgaWNvbjo6ZmFfaGVhcnQoY29sb3VyID0gInJlZCIpYAoKPGEgaHJlZj0ibXkucGRmIj4gPGkgY2xhc3M9ImZhIGZhLWZpbGUtcGRmIGZhLTR4Ij48L2k+PC9hPgoKRm9vdG5vdGVzIHVzZSBzdGFuZGFyZCBbUGFuZG9jXShodHRwczovL3BhbmRvYy5vcmcvKSBtYXJrZG93biBub3RhdGlvbiwgZm9yIGV4YW1wbGUgXltUaGlzIHdpbGwgYmVjb21lIGEgaG92ZXItYWJsZSBmb290bm90ZV0uCgo8YnI+Cgo8ZGl2IGNsYXNzPSJxdWVzdGlvbiI+CjEuIE15IGZpcnN0IHF1ZXN0aW9uIAo8L2Rpdj4KCjxicj4KPGJyPgoKIyMgVGhlICJleGVyY2lzZSIgZGlyZWN0aXZlIHsuZXhlcmNpc2UgLX0KKioqClRoaXMgaXMgYW4gYGV4Y2VyY2lzZWAgc2VjdGlvbiwgd2hpY2ggaXMgZGVmaW5lZCBpbiB0aGUgQ1NTIGZpbGUuCgpJIHdpbGwgYWxzbyBsaW5rIHRvIHRoZSBbSWNvbiBzZWN0aW9uXSgjc2VjdGlvbi1pY29uKS4KQW5kIHJlZmVyIHRvIEZpZy4gXEByZWYoZmlnOmdnLW96LWdhcG1pbmRlcikuCgo8YnI+Cjxicj4KCiMjIE1vcmUgYmFja2dyb3VuZCBjb2xvcmluZyB7LX0KKioqCjxzdHlsZT4KZGl2LmJsdWUgeyBiYWNrZ3JvdW5kLWNvbG9yOiNlNmYwZmY7IGJvcmRlci1yYWRpdXM6IDVweDsgcGFkZGluZzogMjBweDt9Cjwvc3R5bGU+CjxkaXYgY2xhc3MgPSAiYmx1ZSI+Ci0gVGhpcyBpcyBteSBmaXJzdCBjb25jbHVzaW9uCi0gVGhpcyBpcyBteSBzZWNvbmQgY29uY2x1c2lvbgo8L2Rpdj4KCjxicj4KPGJyPgoKIyMgU29tZSBjb2RlIHstfQoqKioKYGBge3IgY29kZXRlc3QsIGV2YWw9RkFMU0V9Cmluc3RhbGwucGFja2FnZXMoYygnaGVyZScsICd0aWR5dmVyc2UnKSkKbGlicmFyeShoZXJlKSAjIFdoZW4gd29ya2luZyB3aXRoIGxvY2FsIGZpbGVzCmBgYAoKYGBge3IgY2Fyc30Kc3VtbWFyeShjYXJzKQpgYGAKCjxicj4KPGJyPgoKIyMgQSBwbG90IHstfQoqKioKYGBge3IgZ2ctb3otZ2FwbWluZGVyLCBlY2hvID0gRkFMU0UsIGZpZy5jYXAgPSAiTGlmZSBleHBlY3RhbmN5IGZyb20gMTk1MiAtIDIwMDcgZm9yIEF1c3RyYWxpYS4ifQpnYXBtaW5kZXIgJT4lCiAgZmlsdGVyKGNvdW50cnkgPT0gIkF1c3RyYWxpYSIpICU+JQogIGdncGxvdChhZXMoeCA9IGxpZmVFeHAsCiAgICAgICAgICAgICB5ID0geWVhcikpICsgCiAgZ2VvbV9wb2ludCgpCmBgYAoKPGJyPgo8YnI+CgojIyBBIG1hcCB7LX0KKioqCmBgYCB7ciwgZWNobz1GQUxTRX0KbGlicmFyeShsZWFmbGV0KQpsZWFmbGV0KCkgJT4lCiAgYWRkVGlsZXMoKSAlPiUgICMgQWRkIGRlZmF1bHQgT3BlblN0cmVldE1hcCBtYXAgdGlsZXMKICBhZGRNYXJrZXJzKGxuZz0tODEuOTI2MzMsIGxhdD00MC43Nzk5NSwgcG9wdXA9IlNlbGJ5IEhhbGwiKQpgYGAKCjxicj4KCiMjIE11bHRpcGxlIGNvbHVtbnMgey19CioqKgo8ZGl2IGNsYXNzID0gInJvdyI+CiAgCjxkaXYgY2xhc3MgPSAiY29sLW1kLTQiPgo8YnI+PGJyPlNpbmNlIFIgTWFya2Rvd24gdXNlIHRoZSBbYm9vdHN0cmFwIGZyYW1ld29ya10oaHR0cHM6Ly9nZXRib290c3RyYXAuY29tL2RvY3MvNC4wL2xheW91dC9ncmlkLykgdW5kZXIgdGhlIGhvb2QuIEl0IGlzIHBvc3NpYmxlIHRvIGJlbmVmaXQgaXRzIHBvd2VyZnVsIGdyaWQgc3lzdGVtLiBCYXNpY2FsbHksIHlvdSBjYW4gY29uc2lkZXIgdGhhdCB5b3VyIHJvdyBpcyBkaXZpZGVkIGluIDEyIHN1YnVuaXRzIG9mIHNhbWUgd2lkdGguIFlvdSBjYW4gdGhlbiBjaG9vc2UgdG8gdXNlIG9ubHkgYSBmZXcgb2YgdGhpcyBzdWJ1bml0cy4KPC9kaXY+CiAgCjxkaXYgY2xhc3MgPSAiY29sLW1kLTQiPgo8YnI+PGJyPkhlcmUsIEkgdXNlIDMgc3VidW5pdHMgb2Ygc2l6ZSA0ICg0eDM9MTIpLiBUaGUgbGFzdCBjb2x1bW4gaXMgdXNlZCBmb3IgYSBwbG90LiBZb3UgY2FuIHJlYWQgbW9yZSBhYm91dCB0aGUgZ3JpZCBzeXN0ZW0gW2hlcmVdKGJvb3RzdHJhcCBncmlkIHN5c3RlbSkuIEkgZ290IHRoaXMgcmVzdWx0IHNob3dpbmcgdGhlIGZvbGxvd2luZyBjb2RlIGluIG15IFIgTWFya2Rvd24gZG9jdW1lbnQuCjwvZGl2PgogIAo8ZGl2IGNsYXNzID0gImNvbC1tZC00Ij4KYGBge3IsIG1lc3NhZ2U9RkFMU0UsIGVjaG89RkFMU0V9CmdncGxvdChtdGNhcnMsIGFlcyh4PW1wZykpICsKICBnZW9tX2hpc3RvZ3JhbShmaWxsPSJza3libHVlIiwgYWxwaGE9MC41KSArCiAgdGhlbWVfbWluaW1hbCgpCmBgYAo8L2Rpdj4KPC9kaXY+Cgo8YnI+Cjxicj4KCiMjIEEgdGFibGUgd2l0aCBrYWJsZSB7LX0KKioqCmBgYHtyLCBlY2hvPUZBTFNFfQp0b3BfZ2FwIDwtIGhlYWQoZ2FwbWluZGVyKQprbml0cjo6a2FibGUodG9wX2dhcCwKICAgICAgICAgICAgIGRpZ2l0cyA9IDIsCiAgICAgICAgICAgICBjYXB0aW9uID0gIlRoZSBmaXJzdCA2IHJvd3Mgb2YgdGhlIGRhdGFzZXQsIGdhcG1pbmRlciIpCmBgYAoKPGRpdiBjbGFzcz0icXVlc3Rpb24iPgoxLiBXYWl0LCBhbm90aGVyIHF1ZXN0aW9uPwo8L2Rpdj4KCjxicj4KPGJyPgoKIyMgQSB0YWJsZSB3aXRoIERUIHstfQoqKioKYGBge3IsIGVjaG89RkFMU0V9IApEVDo6ZGF0YXRhYmxlKG10Y2Fycywgcm93bmFtZXMgPSBGQUxTRSwgZmlsdGVyID0gInRvcCIsCiAgICAgICAgICAgICAgb3B0aW9ucyA9IGxpc3QocGFnZUxlbmd0aCA9IDUsIHNjcm9sbFggPSBUUlVFKSApCmBgYAoKPGJyPgo8YnI+CgojIyBBIHRhYmJlZCBzZWN0aW9uIHstIC50YWJzZXQgLnRhYnNldC1mYWRlIC50YWJzZXQtcGlsbHN9CioqKgoKIyMjIEZpcnN0IHstfQpBIGZpcnN0IHNlY3Rpb24KCjxicj4KPGJyPgoKIyMjIFNlY29uZCB7LX0KY29udGVudCBvZiBzdWItY2hhcHRlciAjMgoKPGJyPgo8YnI+CgojIyMgVGhpcmQgey19CmNvbnRlbnQgb2Ygc3ViLWNoYXB0ZXIgIzMKCjxicj4KPGJyPgoKIyMgU2Vzc2lvbiBpbmZvIHstfQoqKioKYGBge3Igc2Vzc2lvbmluZm8sIGVjaG89RkFMU0UsIG91dC53aWR0aD0iNTAlIiB9CnNlc3Npb25JbmZvKCkKYGBgCg==</div>
+<div class="footer">
+  <hr>
+  <p><i class="fas fa-envelope"></i><a href="poelstra.1@osu.edu"> Jelmer Poelstra</a></p>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 License</a>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("practice.Rmd");
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
