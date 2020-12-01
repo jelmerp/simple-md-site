@@ -2,7 +2,7 @@ name: "my-website"
 output_dir: docs
 highlight: tango
 navbar:
-  title: "A course site"
+  title: "<img id=\"logo\" style=\"width: 80px;\" src=\"img/Logo.jpg\" />"
   left:
     - text: "Home"
       icon: fa-home
@@ -16,22 +16,24 @@ navbar:
     - text: "More"
       icon: fa-gear
       menu:
-        - text: "Heading 1"
-        - text: "Page A"
-          href: practice.html
+        - text: "Main pages"
+        - text: "Testing headers!"
+          href: headertest.html
         - text: "Page B"
-          href: practice.html
+          href: headertest.html
         - text: "---------"
-        - text: "Heading 2"
+        - text: "Additional pages"
         - text: "Page C"
-          href: practice.html
+          href: headertest.html
   right:
     - icon: fa-github fa-lg
-      href: https://example.com
+      href: https://github.com/jelmerp/simple-md-site
 output:
-  html_document:
+  bookdown::html_document2:
     css: style.css
     theme: flatly
+    code_folding: show
+    code_download: true
     include:
-      after_body: my_footer.html
-      in_header: [header.html, hero-image.html]
+      after_body: footer.html
+      in_header: header.html

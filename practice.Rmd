@@ -1,7 +1,7 @@
 ---
-title: "Yet another page"
+title: "A page to test styling and appearance"
 output:
-  html_document:    
+  bookdown::html_document2:
     toc: true
     toc_float: true
 ---
@@ -10,22 +10,65 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r klippy, echo=FALSE, include=TRUE}
-klippy::klippy()
+```{r packages, include=FALSE}
+library(gapminder)
+library(ggplot2)
+library(dplyr)
+library(DT)
 ```
 
-Here `r icon::fa("rocket")` is a rocket.
+```{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy(position = 'right',
+               tooltip_message = "Copy code to clipboard",
+               tooltip_success = "Copied!")
+```
 
 <br>
+
+## Icons {- #section-icon}
+***
+Here `r icon::fa("rocket")` is a rocket.
 
 `r icon::fa_rocket(colour = "#1FA67A")` + `r icon::fa_r_project(colour = "#384CB7")` = `r icon::fa_heart(colour = "red")`
 
-<br>
-
 <a href="my.pdf"> <i class="fa fa-file-pdf fa-4x"></i></a>
 
+Footnotes use standard [Pandoc](https://pandoc.org/) markdown notation, for example ^[This will become a hover-able footnote].
+
 <br>
 
+<div class="question">
+1. My first question 
+</div>
+
+<br>
+<br>
+
+## The "exercise" directive {.exercise -}
+***
+This is an `excercise` section, which is defined in the CSS file.
+
+I will also link to the [Icon section](#section-icon).
+And refer to Fig. \@ref(fig:gg-oz-gapminder).
+
+<br>
+<br>
+
+## More background coloring {-}
+***
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+- This is my first conclusion
+- This is my second conclusion
+</div>
+
+<br>
+<br>
+
+## Some code {-}
+***
 ```{r codetest, eval=FALSE}
 install.packages(c('here', 'tidyverse'))
 library(here) # When working with local files
@@ -36,22 +79,105 @@ summary(cars)
 ```
 
 <br>
+<br>
 
-## A plot
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+## A plot {-}
+***
+```{r gg-oz-gapminder, echo = FALSE, fig.cap = "Life expectancy from 1952 - 2007 for Australia."}
+gapminder %>%
+  filter(country == "Australia") %>%
+  ggplot(aes(x = lifeExp,
+             y = year)) + 
+  geom_point()
 ```
 
-## Another header
-What now?
+<br>
+<br>
 
-## Third header
-Yes
+## A map {-}
+***
+``` {r, echo=FALSE}
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=-81.92633, lat=40.77995, popup="Selby Hall")
+```
 
-## Final header
-The end
+<br>
 
+## Multiple columns {-}
+***
+<div class = "row">
+  
+<div class = "col-md-4">
+<br><br>Since R Markdown use the [bootstrap framework](https://getbootstrap.com/docs/4.0/layout/grid/) under the hood. It is possible to benefit its powerful grid system. Basically, you can consider that your row is divided in 12 subunits of same width. You can then choose to use only a few of this subunits.
+</div>
+  
+<div class = "col-md-4">
+<br><br>Here, I use 3 subunits of size 4 (4x3=12). The last column is used for a plot. You can read more about the grid system [here](bootstrap grid system). I got this result showing the following code in my R Markdown document.
+</div>
+  
+<div class = "col-md-4">
+```{r, message=FALSE, echo=FALSE}
+ggplot(mtcars, aes(x=mpg)) +
+  geom_histogram(fill="skyblue", alpha=0.5) +
+  theme_minimal()
+```
+</div>
+</div>
+
+<br>
+<br>
+
+## A table with kable {-}
+***
+```{r, echo=FALSE}
+top_gap <- head(gapminder)
+knitr::kable(top_gap,
+             digits = 2,
+             caption = "The first 6 rows of the dataset, gapminder")
+```
+
+<div class="question">
+1. Wait, another question?
+</div>
+
+<br>
+<br>
+
+## A table with DT {-}
+***
+```{r, echo=FALSE} 
+DT::datatable(mtcars, rownames = FALSE, filter = "top",
+              options = list(pageLength = 5, scrollX = TRUE) )
+```
+
+<br>
+<br>
+
+## A tabbed section {- .tabset .tabset-fade .tabset-pills}
+***
+
+### First {-}
+A first section
+
+<br>
+<br>
+
+### Second {-}
+content of sub-chapter #2
+
+<br>
+<br>
+
+### Third {-}
+content of sub-chapter #3
+
+<br>
+<br>
+
+## Session info {-}
+***
 ```{r sessioninfo, echo=FALSE, out.width="50%" }
 sessionInfo()
 ```
